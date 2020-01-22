@@ -46,7 +46,7 @@ function greeting() {
 	sleep 5s
 }
 
-unction victory() {
+function victory() {
 	echo
 	echo "Running ArcoLinux Victory Edition Setup Scripts"
 	echo
@@ -84,9 +84,6 @@ function leave() {
 }
 
 greeting
-mirror
-update
-arch
-arco
+victory
 lightdm
 leave
