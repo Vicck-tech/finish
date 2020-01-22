@@ -67,7 +67,7 @@ function arch() {
 	echo "Running ArchLinux Setup Scripts"
 	echo
 	sleep 3s
-	cd /victory-finish/ArchWay/
+	cd /victory/ArchWay/
 	echo
 	sh ArchWay/10-add-keyservers-for-key-importing-v*.sh
 	sh ArchWay/20-trust-key-v*.sh
@@ -82,7 +82,7 @@ function arco() {
 	echo "Running ArcoLinux Setup Scripts"
 	echo
 	sleep 3s
-	cd /victory-finish/ArcoInstall/
+	cd /victory/ArcoInstall/
 	echo
 	sh ArcoInstall/000-use-all-cores-makepkg-conf-v*.sh
 	sh ArcoInstall/100-display-manager-and-desktop-v*.sh
@@ -115,7 +115,7 @@ function victory() {
 	echo "Running ArcoLinux Victory Edition Setup Scripts"
 	echo
 	sleep 3s
-	cd /victory-finish/victoryInstall/
+	cd /victory/victoryInstall/
 	echo
 	sh VictoryInstall/100-software-from-victory-repo-v*.sh
 	check_exit_status
