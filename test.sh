@@ -54,7 +54,7 @@ function victory() {
 	cd /victory-finish/victoryInstall/
 	echo
 	sh VictoryInstall/100-software-from-victory-repo-v*.sh
-		_exit_status
+#		_exit_status
 }
 
 function lightdm() {
