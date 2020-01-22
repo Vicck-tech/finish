@@ -7,9 +7,9 @@
 #
 ##################################################################################################################
 
-echo "################################################################"
-echo "####                VICTORY FOLDER                        ####"
-echo "################################################################"
+echo "#######################################################"
+echo "####                VICTORY                        ####"
+echo "#######################################################"
 echo
 
 sudo pacman -S timeshift-autosnap --noconfirm --needed
@@ -19,4 +19,6 @@ sudo pacman -S lightdm-webkit2-greeter --noconfirm --needed
 sudo pacman -S victory-flat-remix-themes-git --noconfirm --needed
 sudo pacman -S victory-lightdm-litarvan-git --noconfirm --needed
 sudo pacman -S hefftor-gimp-git --noconfirm --needed
+sudo pacman -S hefftor-variety-git --noconfirm --needed
+
 
