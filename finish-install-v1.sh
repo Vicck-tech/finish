@@ -8,17 +8,11 @@ echo "Then figure out how to get the broken package installed or leave it until 
 echo "will fix it for you. Give it some time."
 sleep 3
 
-##################################################################################################################
-# Author        :Erik Dubois
-# Forked by     :Vicck-tech 
-# 
-# Forked and edited for my personal needs
-# 
-##################################################################################################################
-#
-#   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
-#
-##################################################################################################################
+#########################################################################
+#																		#
+#   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.		#
+#																		#
+#########################################################################
 
 # software from AUR (Arch User Repositories)
 # https://aur.archlinux.org/packages/
