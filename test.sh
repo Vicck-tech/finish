@@ -9,7 +9,7 @@
 ##################################################################################################################
 
 # Make sure each command executes properly
-bash -x test.sh 2>&1 | tee victory-log.txt
+#bash -x test.sh 2>&1 | tee victory-log.txt
 #exec &> ~/Documents/victory-log.txt
 
 check_exit_status() {
