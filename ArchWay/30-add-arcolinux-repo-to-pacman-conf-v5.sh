@@ -18,17 +18,17 @@ echo '
 #SigLevel = Required DatabaseOptional
 #Include = /etc/pacman.d/arcolinux-mirrorlist
 
-[arcolinux_repo]
-SigLevel = Required DatabaseOptional
-Include = /etc/pacman.d/arcolinux-mirrorlist
+#[arcolinux_repo]
+#SigLevel = Required DatabaseOptional
+#Include = /etc/pacman.d/arcolinux-mirrorlist
 
-[arcolinux_repo_3party]
-SigLevel = Required DatabaseOptional
-Include = /etc/pacman.d/arcolinux-mirrorlist
+#[arcolinux_repo_3party]
+#SigLevel = Required DatabaseOptional
+#Include = /etc/pacman.d/arcolinux-mirrorlist
 
-[arcolinux_repo_submicron]
-SigLevel = Required DatabaseOptional
-Include = /etc/pacman.d/arcolinux-mirrorlist
+#[arcolinux_repo_submicron]
+#SigLevel = Required DatabaseOptional
+#Include = /etc/pacman.d/arcolinux-mirrorlist
 
 [hefftor-repo]
 SigLevel = Optional TrustedOnly 
