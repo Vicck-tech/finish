@@ -50,7 +50,7 @@ function mirror() {
 
 	echo "Updating your Mirrors."
 	sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist;
-	check_exit_status
+#	check_exit_status
 }
 
 # Downloading and installing all Arch Linux and ArcoLinux packages
@@ -101,6 +101,15 @@ function arco() {
 	sh ArcoInstall/600-software-from-ArcoLinux-repo-v*.sh
 	sh ArcoInstall/700-installing-fonts-v*.sh
 	_exit_status
+}
+
+function lightdm() {
+	echo
+	sudo sed -i 's/#greeter-session=lightdm-slick-greeter/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
+	echo
+	sudo sed -i 's/webkit_theme        = antergos/webkit_theme        = litarvan/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+	echo
+		_exit_status
 }
 
 function victory() {
@@ -182,6 +191,7 @@ mirror
 update
 arch
 arco
+lightdm
 victory
 plank
 bash
