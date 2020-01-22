@@ -67,7 +67,7 @@ function arch() {
 	echo "Running ArchLinux Setup Scripts"
 	echo
 	sleep 3s
-	cd ~/victory/ArchWay/
+#	cd ~/victory/ArchWay/
 	echo
 	sh ArchWay/10-add-keyservers-for-key-importing-v*.sh
 	sh ArchWay/20-trust-key-v*.sh
