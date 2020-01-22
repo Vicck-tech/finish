@@ -52,7 +52,7 @@ function mirror() {
 }
 
 # Downloading and installing all Arch Linux and ArcoLinux packages
-function general_update() {
+function update() {
 
 	echo "Updating Arch & Arco."
 	echo
@@ -62,22 +62,12 @@ function general_update() {
 	check_exit_status
 }
 
-
-# Running Arco Linux Setup Scripts
-function finish() {
-	echo
-	echo "Running Victory Linux finish Script"
-	echo
-	sleep 3s
-#	cd /arco-gnome/ArcoInstall/
-	# Running Arco Linux Setup Scripts
-
 function arch() {
 	echo
-	echo "Running Arco Linux Setup Scripts"
+	echo "Running ArchLinux Setup Scripts"
 	echo
 	sleep 3s
-	cd /victory-finish/ArcoInstall/
+	cd /victory-finish/ArchWay/
 	echo
 	sh ArchWay/10-add-keyservers-for-key-importing-v*.sh
 	sh ArchWay/20-trust-key-v*.sh
@@ -89,12 +79,13 @@ function arch() {
 
 function arco() {
 	echo
-	echo "Running Arco Linux Setup Scripts"
+	echo "Running ArcoLinux Setup Scripts"
 	echo
 	sleep 3s
 	cd /victory-finish/ArcoInstall/
 	echo
 	sh ArcoInstall/000-use-all-cores-makepkg-conf-v*.sh
+	sh ArcoInstall/100-display-manager-and-desktop-v*.sh
 	sh ArcoInstall/110-install-sound-v*.sh
 	sh ArcoInstall/120-bluetooth-v*.sh
 	sh ArcoInstall/121-fix-bluetooth-switch-not-working-v*.sh
@@ -110,6 +101,37 @@ function arco() {
 	_exit_status
 }
 
+function victory() {
+	echo
+	echo "Running ArcoLinux Victory Edition Setup Scripts"
+	echo
+	sleep 3s
+	cd /victory-finish/victoryInstall/
+	echo
+	sh VictoryInstall/100-software-from-victory-repo-v*.sh
+		_exit_status
+}
+
+function plank() {
+	echo
+	echo "Running Plank Config"
+	echo
+	sleep 3s
+	install -dm 755 "$pkgdir"/etc/skel/.config/plank/dock1/launchers;
+	cp -drf Downloads/victory-finish/launchers --no-preserve='ownership' . "$pkgdir"/etc/skel/.config/plank/dock1/launchers/"$_pkgname"
+		_exit_status
+}
+
+# Put the fancy bash promt back after updating
+function bash() {
+
+	echo "Putting Bashrc back together."
+	echo 'source ~/.fancy-user-bash.sh' | sudo tee --append /etc/skel/.bashrc
+	echo
+	sudo cp /etc/skel/.bashrc ~/.bashrc && source ~/.bashrc;
+	check_exit_status
+}
+
 # Debloat ArcolinuxD
 function debloat() {
 
@@ -119,6 +141,22 @@ function debloat() {
 	sudo pacman -Rdsu gnome-books gnome-clocks gnome-terminal gnome-documents gnome-maps gnome-music gnome-todo gnome-weather gnome-boxes epiphany totem --noconfirm;
 	check_exit_status
 }
+
+# Perform the maintenance and clean-up duties, remove orphaned files to keep the system running optimally
+function housekeeping() {
+	
+		echo
+#		read -p "Are you ready to clean up? (y/n) " answer
+
+#            if [ "$answer" == "y" ]
+#            then
+        echo "Cleaning up."
+#		sudo rm -rf /usr/share/backgrounds/arcolinux
+#		sudo rm -rf /usr/share/backgrounds/gnome
+		sudo pacman -Rns $(pacman -Qtdq) --noconfirm;
+#            fi
+}
+
 
 function leave() {
 
@@ -138,15 +176,12 @@ function leave() {
 
 greeting
 mirror
-general_update
+update
+arch
 arco
-update_script
-fix_bashrc
-icons
-dock
-backgrounds
-nvidia
-intel
-#virtualbox
+victory
+plank
+bash
 debloat
+housekeeping
 leave
