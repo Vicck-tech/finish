@@ -74,7 +74,7 @@ function arch() {
 	sh ArchWay/30-add-arcolinux-repo-to-pacman-conf-v*.sh
 	sh ArchWay/40-install-software-ArcoLinux-uses-in-bashrc-v*.sh
 	sh ArchWay/50-create-autologin-group-to-be-able-to-autologin-v*.sh
-	check_exit_status
+#	check_exit_status
 }
 
 function arco() {
@@ -82,7 +82,7 @@ function arco() {
 	echo "Running ArcoLinux Setup Scripts"
 	echo
 	sleep 3s
-	cd ~/victory/ArcoInstall/
+#	cd ~/victory/ArcoInstall/
 	echo
 	sh ArcoInstall/000-use-all-cores-makepkg-conf-v*.sh
 	sh ArcoInstall/100-display-manager-and-desktop-v*.sh
@@ -115,7 +115,7 @@ function victory() {
 	echo "Running ArcoLinux Victory Edition Setup Scripts"
 	echo
 	sleep 3s
-	cd ~/victory/victoryInstall/
+#	cd ~/victory/victoryInstall/
 	echo
 	sh VictoryInstall/100-software-from-victory-repo-v*.sh
 	check_exit_status
