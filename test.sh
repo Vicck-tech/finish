@@ -112,67 +112,8 @@ function lightdm() {
 	echo
 #	sudo sed -i 's/webkit_theme        = antergos/webkit_theme        = litarvan/g' /etc/lightdm/lightdm-webkit2-greeter.conf
 	echo
-	exit
 		_exit_status
 }
-
-function victory() {
-	echo
-	echo "Running ArcoLinux Victory Edition Setup Scripts"
-	echo
-	sleep 3s
-	cd /victory-finish/victoryInstall/
-	echo
-	sh VictoryInstall/100-software-from-victory-repo-v*.sh
-		_exit_status
-}
-
-function plank() {
-	echo
-	echo "Running Plank Config"
-	echo
-	sleep 3s
-	install -dm 755 "$pkgdir"/etc/skel/.config/plank/dock1/launchers;
-	cp -drf Downloads/victory-finish/launchers --no-preserve='ownership' . "$pkgdir"/etc/skel/.config/plank/dock1/launchers/"$_pkgname"
-		_exit_status
-}
-
-# Put the fancy bash promt back after updating
-function bash() {
-
-	echo "Putting Bashrc back together."
-	echo 'source ~/.fancy-user-bash.sh' | sudo tee --append /etc/skel/.bashrc
-	echo
-	sudo cp /etc/skel/.bashrc ~/.bashrc && source ~/.bashrc;
-	check_exit_status
-}
-
-# Debloat ArcolinuxD
-function debloat() {
-
-	echo "Debloating."
-	echo
-	sleep 3s
-	sudo pacman -Rdsu gnome-books gnome-clocks gnome-terminal gnome-documents gnome-maps gnome-music gnome-todo gnome-weather gnome-boxes epiphany totem --noconfirm;
-	check_exit_status
-}
-
-# Perform the maintenance and clean-up duties, remove orphaned files to keep the system running optimally
-function housekeeping() {
-	
-		echo
-#		read -p "Are you ready to clean up? (y/n) " answer
-
-#            if [ "$answer" == "y" ]
-#            then
-        echo "Cleaning up."
-#		sudo rm -rf /usr/share/backgrounds/arcolinux
-#		sudo rm -rf /usr/share/backgrounds/gnome
-		sudo pacman -Rns $(pacman -Qtdq) --noconfirm;
-		sudo rm-rf ~/victory-finish
-#            fi
-}
-
 
 function leave() {
 
@@ -196,9 +137,4 @@ update
 arch
 arco
 lightdm
-victory
-plank
-bash
-debloat
-housekeeping
 leave
