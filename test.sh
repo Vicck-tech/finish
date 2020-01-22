@@ -46,21 +46,21 @@ function greeting() {
 	sleep 5s
 }
 
-function arco() {
+unction victory() {
 	echo
-	echo "Running ArcoLinux Setup Scripts"
+	echo "Running ArcoLinux Victory Edition Setup Scripts"
 	echo
 	sleep 3s
-	cd /victory-finish/ArcoInstall/
+	cd /victory-finish/victoryInstall/
 	echo
-	sh ArcoInstall/700-installing-fonts-v*.sh
-
+	sh VictoryInstall/100-software-from-victory-repo-v*.sh
+		_exit_status
 }
 
 function lightdm() {
 	echo
 	cd /etc/lightdm/
-	sudo sed -i -e 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
+#	sudo sed -i -e 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
 	echo
 	sudo sed -i -e 's/webkit_theme        = antergos/webkit_theme        = litarvan/g' /etc/lightdm/lightdm-webkit2-greeter.conf
 	echo
