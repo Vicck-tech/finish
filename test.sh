@@ -9,7 +9,7 @@
 ##################################################################################################################
 
 # Make sure each command executes properly
-bash -x test.sh 2>&1 | tee /Documents/victory-log.txt
+bash -x test.sh 2>&1 | tee victory-log.txt
 #exec &> ~/Documents/victory-log.txt
 
 check_exit_status() {
@@ -106,7 +106,7 @@ function arco() {
 
 function lightdm() {
 	echo
-	cd pathname
+	cd /etc/lightdm/lightdm.conf
 	for y in `ls *`;
 	do sed "s/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g" $y > temp; mv temp $y;
 #	sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
