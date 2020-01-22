@@ -154,6 +154,7 @@ function housekeeping() {
 #		sudo rm -rf /usr/share/backgrounds/arcolinux
 #		sudo rm -rf /usr/share/backgrounds/gnome
 		sudo pacman -Rns $(pacman -Qtdq) --noconfirm;
+		sudo rm-rf /Downloads/victory-finish
 #            fi
 }
 
