@@ -9,6 +9,8 @@
 ##################################################################################################################
 
 # Make sure each command executes properly
+exec &> ~/Documents/finishlog.txt
+
 check_exit_status() {
 
 	if [ $? -eq 0 ]
