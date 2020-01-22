@@ -101,7 +101,7 @@ function arco() {
 	check_exit_status
 }
 
-ffunction lightdm() {
+function lightdm() {
 	echo
 	cd /etc/lightdm/
 	sudo sed -i -e 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
