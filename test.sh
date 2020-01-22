@@ -54,18 +54,17 @@ function arco() {
 	cd /victory-finish/ArcoInstall/
 	echo
 	sh ArcoInstall/700-installing-fonts-v*.sh
-		_exit_status
+
 }
 
 function lightdm() {
 	echo
 	cd /etc/lightdm/
-#	sed "s/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g" $y > temp; mv temp $y;
 	sudo sed -i -e 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
 	echo
-#	sudo sed -i 's/webkit_theme        = antergos/webkit_theme        = litarvan/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+	sudo sed -i -e 's/webkit_theme        = antergos/webkit_theme        = litarvan/g' /etc/lightdm/lightdm-webkit2-greeter.conf
 	echo
-		_exit_status
+
 }
 
 function leave() {
