@@ -49,7 +49,7 @@ function greeting() {
 function mirror() {
 
 	echo "Updating your Mirrors."
-	sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist;
+	sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist
 #	check_exit_status
 }
 
