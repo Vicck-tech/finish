@@ -43,25 +43,6 @@ function greeting() {
 	sleep 5s
 }
 
-# searching for the fastest mirrors
-function mirror() {
-
-	echo "Updating your Mirrors."
-	sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist;
-	check_exit_status
-}
-
-# Downloading and installing all Arch Linux and ArcoLinux packages
-function update() {
-
-	echo "Updating Arch & Arco."
-	echo
-	sleep 3s
-	sudo pacman -Sy archlinux-keyring --noconfirm;
-	sudo pacman -Syyu --noconfirm;
-	check_exit_status
-}
-
 function arch() {
 	echo
 	echo "Running ArchLinux Setup Scripts"
@@ -110,6 +91,25 @@ function victory() {
 	echo
 	sh VictoryInstall/100-software-from-victory-repo-v*.sh
 		_exit_status
+}
+
+# searching for the fastest mirrors
+function mirror() {
+
+	echo "Updating your Mirrors."
+	sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist;
+	check_exit_status
+}
+
+# Downloading and installing all Arch Linux and ArcoLinux packages
+function update() {
+
+	echo "Updating Arch & Arco."
+	echo
+	sleep 3s
+	sudo pacman -Sy archlinux-keyring --noconfirm;
+	sudo pacman -Syyu --noconfirm;
+	check_exit_status
 }
 
 function plank() {
