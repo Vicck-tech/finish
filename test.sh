@@ -9,7 +9,8 @@
 ##################################################################################################################
 
 # Make sure each command executes properly
-exec &> ~/Documents/victory-log.txt
+bash -x test.sh 2>&1 | tee /Documents/victory-log.txt
+#exec &> ~/Documents/victory-log.txt
 
 check_exit_status() {
 
