@@ -101,15 +101,14 @@ function arco() {
 	sh ArcoInstall/500-software-AUR-repo-distro-specific-v*.sh
 	sh ArcoInstall/600-software-from-ArcoLinux-repo-v*.sh
 	sh ArcoInstall/700-installing-fonts-v*.sh
-	_exit_status
+		_exit_status
 }
 
 function lightdm() {
 	echo
 	cd /etc/lightdm/lightdm.conf
-	for y in `ls *`;
-	do sed "s/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g" $y > temp; mv temp $y;
-#	sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
+#	sed "s/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g" $y > temp; mv temp $y;
+	sudo sed -i -e 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
 	echo
 #	sudo sed -i 's/webkit_theme        = antergos/webkit_theme        = litarvan/g' /etc/lightdm/lightdm-webkit2-greeter.conf
 	echo
