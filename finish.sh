@@ -176,11 +176,11 @@ function leave() {
 }
 
 greeting
-mirror
-update
 arch
 arco
 victory
+mirror
+update
 plank
 bash
 debloat
