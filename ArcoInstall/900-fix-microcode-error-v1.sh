@@ -2,12 +2,6 @@
 set -e
 
 ##################################################################################################################
-# Author        :Erik Dubois
-# Forked by     :Vicck-tech 
-# 
-# Forked and edited for my personal needs
-# 
-##################################################################################################################
 #
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
 #

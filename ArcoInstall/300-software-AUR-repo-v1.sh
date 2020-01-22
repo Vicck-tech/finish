@@ -9,12 +9,6 @@ echo "will fix it for you. Give it some time."
 sleep 3
 
 ##################################################################################################################
-# Author        :Erik Dubois
-# Forked by     :Vicck-tech 
-# 
-# Forked and edited for my personal needs
-# 
-##################################################################################################################
 #
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
 #
@@ -28,7 +22,7 @@ sleep 3
 #sudo mount -o remount,size=5G,noatime /tmp
 
 
-echo "Installing category Accessories"
+#echo "Installing category Accessories"
 
 #sh AUR/install-conky-lua-archers-v*.sh
 #sh AUR/install-mintstick-git-v*.sh
@@ -37,35 +31,33 @@ echo "Installing category Development"
 
 sh AUR/install-sublime-text-v*.sh
 
-echo "Installing category Education"
+#echo "Installing category Education"
 
 
-echo "Installing category Games"
+#echo "Installing category Games"
 
 
-echo "Installing category Graphics"
+#echo "Installing category Graphics"
 
 
 echo "Installing category Internet"
 
 sh AUR/install-brave-bin-v*.sh
 
-
 echo "Installing category Multimedia"
 
 sh AUR/install-simplenote-electron-bin-v*.sh
-
 
 echo "Installing category Office"
 
 sh AUR/install-onlyoffice-bin-v*.sh
 
-
 echo "Installing category Other"
 
 echo "Installing category System"
 
-sh AUR/install-downgrade-v*.sh
+sh AUR/install-downdgrade-v*.sh
+sh AUR/install-caffeine-ng-v*.sh
 sh AUR/install-font-manager-git-v*.sh
 sh AUR/install-inxi-v*.sh
 sh AUR/install-neofetch-v*.sh
@@ -74,10 +66,11 @@ sh AUR/install-oxy-neon-v*.sh
 sh AUR/install-pamac-aur-v*.sh
 #sh AUR/install-paper-icon-theme-git-v*.sh
 #sh AUR/install-papirus-icon-theme-git-v*.sh
-sh AUR/install-sardi-icons-v*.sh
-sh AUR/install-sardi-extra-icons-v*.sh
+#sh AUR/install-sardi-icons-v*.sh
+#sh AUR/install-sardi-extra-icons-v*.sh
 #sh AUR/install-screenkey-git-v*.sh
-sh AUR/install-surfn-icons-git-v*.sh
+sh AUR/install-stacer-v*.sh
+#sh AUR/install-surfn-icons-git-v*.sh
 #sh AUR/install-the-platinum-searcher-bin-v*.sh
 sh AUR/install-timeshift-v*.sh
 sh AUR/install-ttf-font-awesome-v*.sh

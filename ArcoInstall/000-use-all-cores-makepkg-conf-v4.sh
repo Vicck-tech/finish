@@ -2,12 +2,7 @@
 # credits to Soehub
 # https://gist.github.com/soehub/fc07b86e2292c562328ee0dc2aadf740
 set -e
-##################################################################################################################
-# Author        :Erik Dubois
-# Forked by     :Vicck-tech 
-# 
-# Forked and edited for my personal needs
-# 
+ 
 ##################################################################################################################
 #
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.

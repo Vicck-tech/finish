@@ -9,12 +9,6 @@ echo "will fix it for you. Give it some time."
 sleep 3
 
 ##################################################################################################################
-# Author        :Erik Dubois
-# Forked by     :Vicck-tech 
-# 
-# Forked and edited for my personal needs
-# 
-##################################################################################################################
 #
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
 #
@@ -22,13 +16,13 @@ sleep 3
 
 echo "AUR - DESKTOP SPECIFIC APPLICATIONS "
 
-sh AUR-DS/install-gnome-terminal-transparency-v*.sh
+#sh AUR-DS/install-gnome-terminal-transparency-v*.sh
 
 sh AUR-DS/install-nautilus-compare-v*.sh
 
 sh AUR-DS/install-nautilus-renamer-v*.sh
 
-sh AUR/install-yad-v*.sh
+#sh AUR/install-yad-v*.sh
 
 echo "################################################################"
 echo "####       Software from AUR-DS folder installed          ######"
