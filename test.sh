@@ -115,9 +115,9 @@ function victory() {
 	echo "Running ArcoLinux Victory Edition Setup Scripts"
 	echo
 	sleep 3s
-	cd ~/victory/victoryInstall/
+#	cd ~/victory/VictoryInstall/
 	echo
-	sh victoryInstall/100-software-from-victory-repo-v*.sh
+	sh VictoryInstall/100-software-from-victory-repo-v*.sh
 	check_exit_status
 }
 
