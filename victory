@@ -41,8 +41,9 @@ function greeting() {
 	echo
 	echo "you will be asked some questions as it progresses"
 	echo
-	echo "THIS WILL TAKE SOME TIME"
-	sleep 5s
+	echo
+	echo "THIS IS NOT A SHORT PROCESS, IT WILL TAKE SOME TIME"
+	sleep 7s
 }
 
 # searching for the fastest mirrors
@@ -69,14 +70,14 @@ function arch() {
 	echo "Running ArchLinux Setup Scripts"
 	echo
 	sleep 3s
-	cd /victory-finish/ArchWay/
+#	cd ~/victory/ArchWay/
 	echo
 	sh ArchWay/10-add-keyservers-for-key-importing-v*.sh
 	sh ArchWay/20-trust-key-v*.sh
 	sh ArchWay/30-add-arcolinux-repo-to-pacman-conf-v*.sh
 	sh ArchWay/40-install-software-ArcoLinux-uses-in-bashrc-v*.sh
 	sh ArchWay/50-create-autologin-group-to-be-able-to-autologin-v*.sh
-	check_exit_status
+#	check_exit_status
 }
 
 function arco() {
@@ -84,7 +85,7 @@ function arco() {
 	echo "Running ArcoLinux Setup Scripts"
 	echo
 	sleep 3s
-	cd /victory-finish/ArcoInstall/
+#	cd ~/victory/ArcoInstall/
 	echo
 	sh ArcoInstall/000-use-all-cores-makepkg-conf-v*.sh
 	sh ArcoInstall/100-display-manager-and-desktop-v*.sh
@@ -100,27 +101,17 @@ function arco() {
 	sh ArcoInstall/500-software-AUR-repo-distro-specific-v*.sh
 	sh ArcoInstall/600-software-from-ArcoLinux-repo-v*.sh
 	sh ArcoInstall/700-installing-fonts-v*.sh
+	sh ArcoInstall/810-software-from-victory-repo-v1.sh
 	check_exit_status
 }
 
-ffunction lightdm() {
+function lightdm() {
 	echo
 	cd /etc/lightdm/
 	sudo sed -i -e 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
 	echo
 	echo
 
-}
-
-function victory() {
-	echo
-	echo "Running ArcoLinux Victory Edition Setup Scripts"
-	echo
-	sleep 3s
-	cd /victory-finish/victoryInstall/
-	echo
-	sh VictoryInstall/100-software-from-victory-repo-v*.sh
-	check_exit_status
 }
 
 function greeter() {
@@ -132,16 +123,6 @@ function greeter() {
 
 }
 
-function plank() {
-	echo
-	echo "Running Plank Config"
-	echo
-	sleep 3s
-	install -dm 755 "$pkgdir"/etc/skel/.config/plank/dock1/launchers;
-	cp -drf ~/victory/launchers --no-preserve='ownership' . "$pkgdir"/etc/skel/.config/plank/dock1/launchers/"$_pkgname"
-	check_exit_status
-}
-
 # Put the fancy bash promt back after updating
 function bash() {
 
@@ -149,6 +130,30 @@ function bash() {
 	echo 'source ~/.fancy-user-bash.sh' | sudo tee --append /etc/skel/.bashrc
 	echo
 	sudo cp /etc/skel/.bashrc ~/.bashrc && source ~/.bashrc;
+	echo
+	gsettings set org.gnome.desktop.default-applications.terminal exec 'terminator'
+	check_exit_status
+}
+
+# Put the fancy bash promt back after updating
+function settings() {
+	echo
+	cd /etc/skel/.config/gtk-3.0/
+	sudo sed -i -e 's/gtk-theme-name=Arc-Dark/gtk-theme-name=Flat-Remix-GTK-Blue-Darker-Solid/g' /etc/skel/.config/gtk-3.0/settings.ini
+	echo
+	sudo sed -i -e 's/gtk-icon-theme-name=Sardi-Arc/gtk-icon-theme-name=Flat-Remix-Blue-Dark/g' /etc/skel/.config/gtk-3.0/settings.ini
+	echo
+	sudo sed -i -e 's/gtk-font-name=Noto Sans 11/gtk-font-name=Noto Sans 14/g' /etc/skel/.config/gtk-3.0/settings.ini
+	echo
+}
+
+# Setting up Gnome Dock
+function dock() {
+
+	echo "Setting up Gnome Dock"
+	echo
+	sleep 3s
+	gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'chromium.desktop', 'org.gnome.Nautilus.desktop', 'simplenote.desktop', 'terminator.desktop', 'realvnc-vncviewer.desktop', 'com.teamviewer.TeamViewer.desktop', 'virtualbox.desktop', 'onboard.desktop']"
 	check_exit_status
 }
 
@@ -159,6 +164,16 @@ function debloat() {
 	echo
 	sleep 3s
 	sudo pacman -Rdsu arcolinux-wallpapers-git gnome-books gnome-backgrounds gnome-clocks gnome-terminal gnome-documents gnome-maps gnome-music gnome-todo gnome-weather gnome-boxes epiphany totem --noconfirm;
+	check_exit_status
+}
+
+# Put the fancy bash promt back after updating
+function bash() {
+
+	echo "Putting Bashrc back together."
+	echo 'source ~/.fancy-user-bash.sh' | sudo tee --append /etc/skel/.bashrc
+	echo
+	sudo cp /etc/skel/.bashrc ~/.bashrc && source ~/.bashrc;
 	check_exit_status
 }
 
@@ -186,7 +201,7 @@ function leave() {
 	echo "---- ArcoLinux-Victory Edition has finished installing! ----"
 	echo "------------------------------------------------------------"
 	echo
-	echo "Enjoy"
+	echo "I hope you Enjoy this Victory Edition"
 	echo
 	echo
 	echo
