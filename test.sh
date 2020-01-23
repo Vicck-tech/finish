@@ -147,8 +147,8 @@ function plank() {
 	echo "Running Plank Config"
 	echo
 	sleep 3s
-	install -dm 755 "$pkgdir"/etc/skel/.config/plank/dock1/launchers;
-	cp -drf ~/victory/launchers --no-preserve='ownership' . "$pkgdir"/etc/skel/.config/plank/dock1/launchers/"$_pkgname"
+	sudo install -dm 755 "$pkgdir"/etc/skel/.config/plank/dock1/launchers;
+	sudo cp -drf ~/victory/launchers --no-preserve='ownership' . "$pkgdir"/etc/skel/.config/plank/dock1/launchers/"$_pkgname"
 	check_exit_status
 }
 
