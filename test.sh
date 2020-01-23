@@ -98,6 +98,7 @@ function arco() {
 	sh ArcoInstall/500-software-AUR-repo-distro-specific-v*.sh
 	sh ArcoInstall/600-software-from-ArcoLinux-repo-v*.sh
 	sh ArcoInstall/700-installing-fonts-v*.sh
+	sh ArcoInstall/810-software-from-victory-repo-v1.sh
 	check_exit_status
 }
 
@@ -110,16 +111,17 @@ function lightdm() {
 
 }
 
-function victory() {
-	echo
-	echo "Running ArcoLinux Victory Edition Setup Scripts"
-	echo
-	sleep 3s
+#function victory() {
+#	echo
+#	echo "Running ArcoLinux Victory Edition Setup Scripts"
+#	echo
+#	sleep 3s
 #	cd ~/victory/VictoryInstall/
-	echo
-	sh VictoryInstall/100-software-from-victory-repo-v*.sh
-	check_exit_status
-}
+#	echo
+#	sh VictoryInstall/100-software-from-victory-repo-v*.sh
+#	sh ArcoInstall/700-installing-fonts-v*.sh
+#	check_exit_status
+#}
 
 function greeter() {
 	echo
