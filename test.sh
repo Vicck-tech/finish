@@ -117,7 +117,7 @@ function victory() {
 	sleep 3s
 #	cd ~/victory/victoryInstall/
 	echo
-	sh VictoryInstall/100-software-from-victory-repo-v*.sh
+	sh 100-software-from-victory-repo-v*.sh
 	check_exit_status
 }
 
