@@ -40,6 +40,8 @@ function greeting() {
 	echo "This is NOT a silent install" 
 	echo
 	echo "you will be asked some questions as it progresses"
+	echo
+	echo "THIS WILL TAKE SOME TIME"
 	sleep 5s
 }
 
