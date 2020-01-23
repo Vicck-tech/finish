@@ -139,11 +139,11 @@ function bash() {
 function settings() {
 	echo
 	cd /etc/skel/.config/gtk-3.0/
-	sudo sed -i -e 's/gtk-theme-name=Arc-Dark/gtk-theme-name=Flat-Remix-GTK-Blue-Darker-Solid/g' /etc/skel/.config/gtk-3.0/settings.ini
+	gsettings set org.gnome.desktop.interface gtk-theme "Flat-Remix-GTK-Blue-Dark"
 	echo
-	sudo sed -i -e 's/gtk-icon-theme-name=Sardi-Arc/gtk-icon-theme-name=Flat-Remix-Blue-Dark/g' /etc/skel/.config/gtk-3.0/settings.ini
+	gsettings set org.gnome.desktop.interface icon-theme "Flat-Remix-Blue-Dark"
 	echo
-	sudo sed -i -e 's/gtk-font-name=Noto Sans 11/gtk-font-name=Noto Sans 14/g' /etc/skel/.config/gtk-3.0/settings.ini
+#	sudo sed -i -e 's/gtk-font-name=Noto Sans 11/gtk-font-name=Noto Sans 14/g' /etc/skel/.config/gtk-3.0/settings.ini
 	echo
 }
 
