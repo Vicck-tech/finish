@@ -130,6 +130,16 @@ function greeter() {
 
 }
 
+# Put the fancy bash promt back after updating
+function bash() {
+
+	echo "Putting Bashrc back together."
+	echo 'source ~/.fancy-user-bash.sh' | sudo tee --append /etc/skel/.bashrc
+	echo
+	sudo cp /etc/skel/.bashrc ~/.bashrc && source ~/.bashrc;
+	check_exit_status
+}
+
 function plank() {
 	echo
 	echo "Running Plank Config"
@@ -164,5 +174,6 @@ arco
 lightdm
 victory
 greeter
+bash
 plank
 leave
