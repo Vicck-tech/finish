@@ -139,6 +139,7 @@ sudo pacman -S --noconfirm --needed terminator
 sudo pacman -S --noconfirm --needed ttf-ubuntu-font-family
 sudo pacman -S --noconfirm --needed ttf-droid
 #sudo pacman -S --noconfirm --needed tumbler
+sudo pacman -S --noconfirm --needed variety
 #sudo pacman -S --noconfirm --needed vnstat
 sudo pacman -S --noconfirm --needed wget
 sudo pacman -S --noconfirm --needed wmctrl
