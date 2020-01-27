@@ -149,6 +149,7 @@ sudo pacman -S --noconfirm --needed wmctrl
 #sudo pacman -S --noconfirm --needed xdg-user-dirs
 #sudo pacman -S --noconfirm --needed xdo
 #sudo pacman -S --noconfirm --needed xdotool
+sudo pacman -S --noconfirm --needed libytnef
 #sudo pacman -S --noconfirm --needed
 
 
