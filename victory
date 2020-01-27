@@ -187,6 +187,16 @@ function wallpaper() {
 	check_exit_status
 }
 
+function autostart() {
+	echo
+	echo
+	cp /usr/share/applications/realvnc-vncserver-service.desktop /etc/skel/.config/autostart/
+	cp /usr/share/applications/com.teamviewer.TeamViewer.desktop /etc/skel/.config/autostart/
+	cp /usr/share/applications/variety.desktop /etc/skel/.config/autostart/
+	echo
+	sudo chmod +x /etc/skel/.config/autostart/*.desktop
+}
+
 # Perform the maintenance and clean-up duties, remove orphaned files to keep the system running optimally
 function housekeeping() {
 	
