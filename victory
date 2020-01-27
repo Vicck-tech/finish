@@ -138,12 +138,12 @@ function bash() {
 # Put the fancy bash promt back after updating
 function settings() {
 	echo
-	cd /etc/skel/.config/gtk-3.0/
-	sudo sed -i -e 's/gtk-theme-name=Arc-Dark/gtk-theme-name=Flat-Remix-GTK-Blue-Darker-Solid/g' /etc/skel/.config/gtk-3.0/settings.ini
-	echo
-	sudo sed -i -e 's/gtk-icon-theme-name=Sardi-Arc/gtk-icon-theme-name=Flat-Remix-Blue-Dark/g' /etc/skel/.config/gtk-3.0/settings.ini
-	echo
-	sudo sed -i -e 's/gtk-font-name=Noto Sans 11/gtk-font-name=Noto Sans 14/g' /etc/skel/.config/gtk-3.0/settings.ini
+	gsettings set org.gnome.desktop.interface gtk-theme "Flat-Remix-GTK-Blue-Dark"
+	gsettings set org.gnome.desktop.interface icon-theme "Flat-Remix-Blue-Dark"
+	gsettings set org.gnome.desktop.interface document-font-name 'Noto Sans Regular 13'
+	gsettings set org.gnome.desktop.interface font-name 'Noto Sans Regular 13'
+	gsettings set org.gnome.desktop.interface monospace-font-name 'Noto Sans Regular 14'
+	gsettings set org.gnome.nautilus.desktop font 'Noto Sans Regular 13'
 	echo
 }
 
@@ -167,6 +167,26 @@ function debloat() {
 	check_exit_status
 }
 
+# Put the fancy bash promt back after updating
+function bash() {
+
+	echo "Putting Bashrc back together."
+	echo 'source ~/.fancy-user-bash.sh' | sudo tee --append /etc/skel/.bashrc
+	echo
+	sudo cp /etc/skel/.bashrc ~/.bashrc && source ~/.bashrc;
+	check_exit_status
+}
+
+# Put the fancy bash promt back after updating
+function wallpaper() {
+
+	echo "Putting Bashrc back together."
+	echo
+	sudo cp -r ~/testing/victorylinux /usr/share/backgrounds
+	echo
+	check_exit_status
+}
+
 # Perform the maintenance and clean-up duties, remove orphaned files to keep the system running optimally
 function housekeeping() {
 	
@@ -180,6 +200,7 @@ function housekeeping() {
 #		sudo rm -rf /usr/share/backgrounds/gnome
 		sudo pacman -Rns $(pacman -Qtdq) --noconfirm;
 		sudo rm-rf ~/victory
+		sudo rm-rf /usr/share/backgrounds/gnome
 #            fi
 }
 
@@ -206,10 +227,11 @@ update
 arch
 arco
 lightdm
+victory
 greeter
+plank
 bash
-settings
-dock
+wallpaper
 debloat
 housekeeping
 leave
